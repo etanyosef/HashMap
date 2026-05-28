@@ -30,7 +30,7 @@ export class HashMap {
 
     get(key) {
         const index = this.hash(key);
-        
+
     }
 
 }
