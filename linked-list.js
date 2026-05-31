@@ -28,9 +28,13 @@ export class LinkedList {
         current.nextNode = newNode;
     }
 
-    get() {
+    getValues() {
         let current = this.head;
         let values = '';
+
+        if (!current) {
+            return null;
+        }
 
         while (current) {
             console.log(current.value)
@@ -38,8 +42,7 @@ export class LinkedList {
             current = current.nextNode;
         }
 
-        values += 'null';
-        console.log(values);
+        return values += 'null';
     }
 
 }
