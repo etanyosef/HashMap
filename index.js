@@ -8,3 +8,4 @@ console.log(test.set('mimoy', 'cat'))
 console.log(test.set('mimoy', 'aw'))
 console.log(test.buckets);
 console.log(test.buckets[11]);
+console.log(test.get('mimoy'));
