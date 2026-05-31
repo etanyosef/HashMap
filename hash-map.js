@@ -22,13 +22,13 @@ export class HashMap {
     set(key, value) {
         const index = this.hash(key);
 
-        if (!this.table[index]) {
-            this.table[index] = [];
+        if (!this.buckets[index]) {
+            this.buckets[index] = new LinkedList();
+            this.buckets[index].append(value);
+            this.listLength++;
+        } else {
+            this.buckets[index].append(value);
         }
-
-        this.table[index] = value;
-
-        return index;
     }
 
     get(key) {
