@@ -33,7 +33,13 @@ export class HashMap {
 
     get(key) {
         const index = this.hash(key);
+        const bucket = this.buckets;
 
+        if (!bucket[index]) {
+            return null;
+        }
+
+        bucket[index].get();
     }
 
 }
