@@ -1,7 +1,7 @@
 class Node {
-    constructor(value) {
+    constructor(value, nextNode = null) {
         this.value = value;
-        this.nextNode = null;
+        this.nextNode = nextNode;
     }
 }
 
@@ -16,12 +16,16 @@ export class LinkedList {
         if (!this.head) {
             this.head = newNode;
             return;
-        }
+        } 
 
         let current = this.head;
         while (current.nextNode) {
+            if (current.value === value) {
+                return;
+            }            
             current = current.nextNode;
         }
         current.nextNode = newNode;
     }
+
 }
