@@ -4,7 +4,8 @@ export class HashMap {
     constructor(capacity = 16) {
         this.loadFactor = 0.75;
         this.capacity = capacity;
-        this.buckets = new Array(capacity), () => new LinkedList();
+        this.buckets = new Array(capacity);
+        this.listLength = 0;
     }
 
     hash(key) {
