@@ -28,4 +28,18 @@ export class LinkedList {
         current.nextNode = newNode;
     }
 
+    get() {
+        let current = this.head;
+        let values = '';
+
+        while (current) {
+            console.log(current.value)
+            values += `(${current.value})->`;
+            current = current.nextNode;
+        }
+
+        values += 'null';
+        console.log(values);
+    }
+
 }
