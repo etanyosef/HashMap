@@ -39,7 +39,7 @@ export class HashMap {
             return null;
         }
 
-        bucket[index].get();
+        console.log(`key:${index} ${bucket[index].getValues()}`);
     }
 
 }
