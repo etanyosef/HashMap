@@ -9,6 +9,8 @@ console.log(test.set('mimoy', 'aw'))
 console.log(test.buckets);
 console.log(test.buckets[11]);
 
+console.log('Get')
+console.log(test.get('gasi'));
 console.log(test.get('mimoy'));
 console.log(test.get('sagi'));
 
