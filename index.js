@@ -13,7 +13,9 @@ console.log('Get')
 console.log(test.get('gasi'));
 console.log(test.get('mimoy'));
 console.log(test.get('sagi'));
+console.log(test.get('sagiasd'));
 
 console.log(test.has('mimoy'));
 console.log(test.has('sagi'));
 console.log(test.has('sagiasd'));
+console.log(test.has('gasi'));
