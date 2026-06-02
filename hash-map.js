@@ -42,4 +42,15 @@ export class HashMap {
         console.log(`key:${index} ${bucket[index].getValues()}`);
     }
 
+    has(key) {
+        const index = this.hash(key);
+        const bucket = this.buckets;
+
+        if (!bucket[index]) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }
