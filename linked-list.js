@@ -33,11 +33,10 @@ export class LinkedList {
         let values = '';
 
         if (!current) {
-            return null;
+            return;
         }
 
         while (current) {
-            console.log(current.value)
             values += `(${current.value})->`;
             current = current.nextNode;
         }
