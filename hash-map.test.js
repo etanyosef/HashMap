@@ -1,12 +1,15 @@
 import { HashMap } from "./hash-map";
 
-const hashMap = new HashMap();
 
-console.log(hashMap.set('gasi', 'cat'))
-console.log(hashMap.set('mimoy', 'aw'))
-console.log(hashMap.set('mimoy', 'cat'))
-console.log(hashMap.set('mimoy', 'aw'))
+describe('Hash Map', () => {
+    const hashMap = new HashMap();
 
-test('Test get', () => {
-    expect(hashMap.get('gasi').toBe(true));
+    hashMap.set('sagi', 'cat');
+    
+    jest.spyOn(hashMap, 'get');
+    jest.spyOn(hashMap, 'has');
+
+    it('Test get', () => {
+        expect(hashMap.get('sagi').toBe('cat'));
+    })
 });
