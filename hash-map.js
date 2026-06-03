@@ -5,7 +5,7 @@ export class HashMap {
         this.loadFactor = 0.75;
         this.capacity = capacity;
         this.buckets = new Array(capacity);
-        this.listLength = 0;
+        this.bucketLength = 0;
     }
 
     hash(key) {
@@ -39,7 +39,7 @@ export class HashMap {
             return null;
         }
 
-        console.log(`key:${index} ${bucket[index].getValues()}`);
+        console.log(`${key}:${index} ${bucket[index].getValues()}`);
     }
 
     has(key) {
@@ -74,6 +74,11 @@ export class HashMap {
         });
         
         return length;
+    }
+
+    clear() {
+        this.buckets = new Array(this.capacity);
+        this.bucketLength = 0;
     }
 
 }
