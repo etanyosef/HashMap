@@ -61,8 +61,19 @@ export class HashMap {
             return false;
         }
 
-        this.buckets[index] = new LinkedList();
+        this.buckets[index] = null;
         return true;
+    }
+
+    length() {
+        const buckets = this.buckets;
+        let length = 0;
+
+        buckets.forEach(bucket => {
+            if (bucket) length++;
+        });
+        
+        return length;
     }
 
 }
