@@ -35,6 +35,8 @@ console.log('keys:' + test.keys());
 
 console.log(test.buckets);
 console.log('values:' + test.values());
+console.log('entries:' + test.entries());
+
 test.clear();
 console.log(test.buckets);
 
