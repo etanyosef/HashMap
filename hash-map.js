@@ -92,4 +92,15 @@ export class HashMap {
         return keys;
     }
 
+    values() {
+        const buckets = this.buckets;
+        let values = [];
+
+        buckets.forEach((bucket, index) => {
+            if (bucket) values.push(bucket.getValues());
+        });
+
+        return values;
+    }
+
 }
