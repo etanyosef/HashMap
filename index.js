@@ -19,3 +19,9 @@ console.log(test.has('mimoy'));
 console.log(test.has('sagi'));
 console.log(test.has('sagiasd'));
 console.log(test.has('gasi'));
+
+console.log(test.buckets);
+console.log(test.remove('mimoy'))
+console.log(test.buckets);
+test.set('mimoy', 'aw')
+console.log(test.buckets);
