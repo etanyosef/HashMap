@@ -81,4 +81,15 @@ export class HashMap {
         this.bucketLength = 0;
     }
 
+    keys() {
+        const buckets = this.buckets;
+        let keys = [];
+
+        buckets.forEach((bucket, index) => {
+            if (bucket) keys.push(index);
+        });
+
+        return keys;
+    }
+
 }
