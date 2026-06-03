@@ -96,11 +96,33 @@ export class HashMap {
         const buckets = this.buckets;
         let values = [];
 
-        buckets.forEach((bucket, index) => {
+        buckets.forEach((bucket) => {
             if (bucket) values.push(bucket.getValues());
         });
 
         return values;
+    }
+
+    entries() {
+        const buckets = this.buckets;
+        let entries = [];
+
+        buckets.forEach((bucket, index) => {            
+            let entry = [];
+            const values = bucket.getValues();
+            
+            if (!bucket) {
+                return;
+            } 
+
+            values.forEach(value => {
+                entry.push(`[${index}, ${value}]`);
+            });
+            
+            entries.push(entry);
+        });
+        
+        return entries;
     }
 
 }
