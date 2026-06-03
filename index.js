@@ -31,6 +31,10 @@ console.log(test.length());
 test.set('powder', 'waw')
 console.log(test.length());
 
+console.log('keys:' + test.keys());
+
 console.log(test.buckets);
 test.clear();
 console.log(test.buckets);
+
+console.log('keys:' + test.keys());
