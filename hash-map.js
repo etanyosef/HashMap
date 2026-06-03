@@ -53,4 +53,16 @@ export class HashMap {
         }
     }
 
+    remove(key) {
+        const index = this.hash(key);
+        const bucket = this.buckets[index];
+
+        if (!bucket) {
+            return false;
+        }
+
+        this.buckets[index] = new LinkedList();
+        return true;
+    }
+
 }
