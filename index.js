@@ -25,3 +25,7 @@ console.log(test.remove('mimoy'))
 console.log(test.buckets);
 test.set('mimoy', 'aw')
 console.log(test.buckets);
+
+console.log(test.length());
+test.set('powder', 'aw')
+console.log(test.length());
