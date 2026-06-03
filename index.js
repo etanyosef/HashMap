@@ -3,6 +3,7 @@ import { HashMap } from "./hash-map.js";
 const test = new HashMap();
 
 console.log(test.set('gasi', 'cat'))
+console.log(test.set('sagi', 'miming'))
 console.log(test.set('mimoy', 'aw'))
 console.log(test.set('mimoy', 'cat'))
 console.log(test.set('mimoy', 'aw'))
@@ -27,5 +28,9 @@ test.set('mimoy', 'aw')
 console.log(test.buckets);
 
 console.log(test.length());
-test.set('powder', 'aw')
+test.set('powder', 'waw')
 console.log(test.length());
+
+console.log(test.buckets);
+test.clear();
+console.log(test.buckets);
