@@ -10,8 +10,8 @@ export class LinkedList {
         this.head = head;
     }
 
-    append(value) {
-        const newNode = new Node(value);
+    append(key, value) {
+        const newNode = new Node(key, value);
 
         if (!this.head) {
             this.head = newNode;
