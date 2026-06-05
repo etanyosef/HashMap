@@ -21,18 +21,20 @@ export class HashMap {
     }
 
     set(key, value) {
-        if (this.threshold <= this.totalLoad) {
-            console.log(this.totalLoad + 'expand');
+        // calculate load if it exceeds loadFactor, expand
+        if (this.threshold <= this.length()) {
+            console.log(this.length() + 'expand');
         }
         
         const index = this.hash(key);
 
         if (!this.buckets[index]) {
             this.buckets[index] = new LinkedList();
-            this.buckets[index].append(value);
+            this.buckets[index].append(key, value);
         } else {
-            this.buckets[index].append(value);
+            this.buckets[index].append(key, value);
         }
+
 
         this.totalLoad++;
     }
