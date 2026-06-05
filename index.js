@@ -21,11 +21,14 @@ test.set('sagitas', 'cat');
 test.set('sagitas', 'cat');
 console.log('length: ' + test.length());
 console.log(test.get('dog'));
+console.log(test.remove('dog'));
 console.log(test.has('dog'));
 console.log(test.entries())
 
 console.log(test.get('sagitas'))
 console.log('Values: ' + test.values());
+
+console.log(test.keys());
 
 // console.log(test.buckets)
 
