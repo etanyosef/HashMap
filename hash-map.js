@@ -4,8 +4,9 @@ export class HashMap {
     constructor(capacity = 16) {
         this.loadFactor = 0.75;
         this.capacity = capacity;
+        this.threshold = this.capacity * this.loadFactor;
         this.buckets = new Array(capacity);
-        this.bucketLength = 0;
+        this.totalLoad = 0;
     }
 
     hash(key) {
@@ -20,15 +21,20 @@ export class HashMap {
     }
 
     set(key, value) {
+        if (this.threshold <= this.totalLoad) {
+            console.log(this.totalLoad + 'expand');
+        }
+        
         const index = this.hash(key);
 
         if (!this.buckets[index]) {
             this.buckets[index] = new LinkedList();
             this.buckets[index].append(value);
-            this.listLength++;
         } else {
             this.buckets[index].append(value);
         }
+
+        this.totalLoad++;
     }
 
     get(key) {
@@ -118,11 +124,15 @@ export class HashMap {
             values.forEach(value => {
                 entry.push(`[${index}, ${value}]`);
             });
-            
+
             entries.push(entry);
         });
         
         return entries;
+    }
+
+    expand() {
+        
     }
 
 }
