@@ -30,18 +30,20 @@ export class LinkedList {
 
     getValues() {
         let current = this.head;
-        let values = [];
+        let entries = [];
 
         if (!current) {
             return;
         }
 
         while (current) {
-            values.push(current.value);
+            // let entry = [];
+            // entry.push(current.key, current.value);
+            entries.push([current.key, current.value])
             current = current.nextNode;
         }
 
-        return values;
+        return entries;
     }
 
 }
