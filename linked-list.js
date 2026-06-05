@@ -30,6 +30,22 @@ export class LinkedList {
 
     getValues() {
         let current = this.head;
+        const values = [];
+
+        if (!current) {
+            return;
+        }
+
+        while (current) {
+            values.push(current.value);
+            current = current.nextNode;
+        }
+
+        return values;
+    }
+
+    getEntries() {
+        let current = this.head;
         let entries = [];
 
         if (!current) {
