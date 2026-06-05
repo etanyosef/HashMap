@@ -113,8 +113,7 @@ export class HashMap {
         const buckets = this.buckets;
         let entries = [];
 
-        buckets.forEach((bucket, index) => {            
-            let entry = [];
+        buckets.forEach((bucket, index) => {      
             const values = bucket.getValues();
             
             if (!bucket) {
@@ -122,17 +121,20 @@ export class HashMap {
             } 
 
             values.forEach(value => {
-                entry.push(`[${index}, ${value}]`);
+                // entry.push(`[${index}, ${value}]`);
+                let entry = [];
+                entry.push(index, value);
+                entries.push(entry);
             });
 
-            entries.push(entry);
+            
         });
         
         return entries;
     }
 
     expand() {
-        
+
     }
 
 }
