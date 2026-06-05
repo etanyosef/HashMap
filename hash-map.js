@@ -118,12 +118,11 @@ export class HashMap {
         const entries = [];
 
         buckets.forEach((bucket) => {      
-            const entry = bucket.getEntries();
-            
             if (!bucket) {
                 return;
             } 
 
+            const entry = bucket.getEntries();    
             entries.push(entry);            
         });
         
