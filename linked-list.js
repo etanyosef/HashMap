@@ -53,9 +53,8 @@ export class LinkedList {
             return;
         }
 
+
         while (current) {
-            // let entry = [];
-            // entry.push(current.key, current.value);
             entries.push([current.key, current.value])
             current = current.nextNode;
         }
