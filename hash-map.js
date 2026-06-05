@@ -47,7 +47,9 @@ export class HashMap {
             return null;
         }
 
-        console.log(`${key}:${index} ${bucket[index].getValues()}`);
+        return bucket[index].getEntries();
+
+        // console.log(`${key}:${index} ${bucket[index].getEntries()}`);
     }
 
     has(key) {
