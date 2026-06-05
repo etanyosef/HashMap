@@ -34,7 +34,7 @@ export class HashMap {
         } else {
             this.buckets[index].append(key, value);
         }
-
+            
 
         this.totalLoad++;
     }
@@ -115,23 +115,16 @@ export class HashMap {
 
     entries() {
         const buckets = this.buckets;
-        let entries = [];
+        const entries = [];
 
-        buckets.forEach((bucket, index) => {      
-            const values = bucket.getValues();
+        buckets.forEach((bucket) => {      
+            const entry = bucket.getEntries();
             
             if (!bucket) {
                 return;
             } 
 
-            values.forEach(value => {
-                // entry.push(`[${index}, ${value}]`);
-                let entry = [];
-                entry.push(index, value);
-                entries.push(entry);
-            });
-
-            
+            entries.push(entry);            
         });
         
         return entries;
