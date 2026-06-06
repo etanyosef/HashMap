@@ -22,6 +22,7 @@ test.set('sagitas', 'cat');
 console.log('length: ' + test.length());
 console.log(test.get('dog'));
 console.log(test.remove('dog'));
+console.log(test.remove('dog'));
 console.log(test.has('dog'));
 console.log(test.entries())
 
