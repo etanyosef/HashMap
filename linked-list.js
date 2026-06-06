@@ -20,12 +20,15 @@ export class LinkedList {
         } 
 
         let current = this.head;
-        while (current.nextNode) {
-            if (current.value === value) {
-                return;
-            }            
+        while (current.nextNode) {       
             current = current.nextNode;
         }
+
+        if (current.key === key) {
+            current.value = value;
+            return;
+        }
+
         current.nextNode = newNode;
     }
 
