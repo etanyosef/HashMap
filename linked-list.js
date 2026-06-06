@@ -20,16 +20,22 @@ export class LinkedList {
         } 
 
         let current = this.head;
-        while (current.nextNode) {       
+
+        // while current node key does not exists
+        // and next node is not null, go to next node
+        while (current.nextNode && current.key !== key) {     
             current = current.nextNode;
         }
 
+        // if current key already exists, update value
+        // else create new node
         if (current.key === key) {
+            console.log(`Updated ${key} value from: ${current.value} to ${value}`)
             current.value = value;
-            return;
+        } else {
+            current.nextNode = newNode;
         }
-
-        current.nextNode = newNode;
+        
     }
 
     getValues() {
