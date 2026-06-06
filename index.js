@@ -18,7 +18,7 @@ console.log('length: ' + test.length());
 test.set('moon', 'silver')
 test.set('sagit', 'cat');
 test.set('sagitas', 'cat');
-test.set('sagitas', 'cat');
+test.set('sagitas', 'cata');
 console.log('length: ' + test.length());
 console.log(test.get('dog'));
 console.log(test.remove('dog'));
