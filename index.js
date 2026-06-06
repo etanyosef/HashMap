@@ -3,6 +3,8 @@ import { HashMap } from "./hash-map.js";
 const test = new HashMap();
 
 test.set('apple', 'red')
+test.set('sagitta', 'cat');
+test.set('sagitta', 'cata');
 test.set('banana', 'yellow')
 test.set('carrot', 'orange')
 test.set('dog', 'brown')
@@ -16,9 +18,11 @@ test.set('kite', 'pink')
 test.set('lion', 'golden')
 console.log('length: ' + test.length());
 test.set('moon', 'silver')
-test.set('sagit', 'cat');
-test.set('sagitas', 'cat');
+test.set('sagitasas', 'cat');
 test.set('sagitas', 'cata');
+test.set('sagitta', 'catas');
+test.set('sagitta', 'catasa');
+
 console.log('length: ' + test.length());
 console.log(test.get('dog'));
 console.log(test.remove('dog'));
@@ -26,7 +30,7 @@ console.log(test.remove('dog'));
 console.log(test.has('dog'));
 console.log(test.entries())
 
-console.log(test.get('sagitas'))
+console.log(test.get('sagitta'))
 console.log('Values: ' + test.values());
 
 console.log(test.keys());
