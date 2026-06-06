@@ -4,8 +4,9 @@ export class HashMap {
     constructor(capacity = 16) {
         this.loadFactor = 0.75;
         this.capacity = capacity;
+        this.threshold = this.capacity * this.loadFactor;
         this.buckets = new Array(capacity);
-        this.bucketLength = 0;
+        this.totalLoad = 0;
     }
 
     hash(key) {
@@ -20,15 +21,22 @@ export class HashMap {
     }
 
     set(key, value) {
+        // calculate load if it exceeds loadFactor, expand
+        if (this.threshold <= this.length()) {
+            console.log(this.length() + 'expand');
+        }
+        
         const index = this.hash(key);
 
         if (!this.buckets[index]) {
             this.buckets[index] = new LinkedList();
-            this.buckets[index].append(value);
-            this.listLength++;
+            this.buckets[index].append(key, value);
         } else {
-            this.buckets[index].append(value);
+            this.buckets[index].append(key, value);
         }
+            
+
+        this.totalLoad++;
     }
 
     get(key) {
@@ -39,7 +47,9 @@ export class HashMap {
             return null;
         }
 
-        console.log(`${key}:${index} ${bucket[index].getValues()}`);
+        return bucket[index].getEntries();
+
+        // console.log(`${key}:${index} ${bucket[index].getEntries()}`);
     }
 
     has(key) {
@@ -105,24 +115,22 @@ export class HashMap {
 
     entries() {
         const buckets = this.buckets;
-        let entries = [];
+        const entries = [];
 
-        buckets.forEach((bucket, index) => {            
-            let entry = [];
-            const values = bucket.getValues();
-            
+        buckets.forEach((bucket) => {      
             if (!bucket) {
                 return;
             } 
 
-            values.forEach(value => {
-                entry.push(`[${index}, ${value}]`);
-            });
-            
-            entries.push(entry);
+            const entry = bucket.getEntries();    
+            entries.push(entry);            
         });
         
         return entries;
+    }
+
+    expand() {
+
     }
 
 }
