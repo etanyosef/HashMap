@@ -24,6 +24,7 @@ export class HashMap {
         // calculate load if it exceeds loadFactor, expand
         if (this.threshold <= this.length()) {
             console.log(this.length() + 'expand');
+            this.expand();
         }
         
         const index = this.hash(key);
@@ -130,7 +131,14 @@ export class HashMap {
     }
 
     expand() {
+        const oldBuckets = this.buckets;
+        this.capacity *= 2;
+        this.buckets = new Array(this.capacity);
+        this.bucketLength = 0;
 
+        oldBuckets.forEach((bucket) => {
+            this.set(bucket.key, bucket.value);
+        });
     }
 
 }
