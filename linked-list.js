@@ -30,7 +30,6 @@ export class LinkedList {
         // if current key already exists, update value
         // else create new node
         if (current.key === key) {
-            console.log(`Updated ${key} value from: ${current.value} to ${value}`)
             current.value = value;
         } else {
             current.nextNode = newNode;
