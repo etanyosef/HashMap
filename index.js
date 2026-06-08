@@ -46,6 +46,8 @@ console.log(test.keys());
 console.log('Values: ' + test.values());
 console.log(test.length())
 console.log(test.entries())
+test.set('asd1323', '1')
+console.log(test.entries())
 
 // console.log(test.buckets)
 
