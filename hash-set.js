@@ -1,6 +1,6 @@
 import { LinkedList } from "./linked-list.js";
 
-class HashSet {
+export class HashSet {
     constructor(capacity = 16) {
         this.capacity = capacity;
         this.loadFactor = 0.75;
@@ -28,5 +28,9 @@ class HashSet {
         } else {
             this.buckets[index].append(key);
         }
+    }
+
+    get(key) {
+        
     }
 }
