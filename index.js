@@ -23,17 +23,29 @@ test.set('sagitas', 'cata');
 test.set('sagitta', 'catas');
 test.set('sagitta', 'catasa');
 
-console.log('length: ' + test.length());
-console.log(test.get('dog'));
-console.log(test.remove('dog'));
-console.log(test.remove('dog'));
-console.log(test.has('dog'));
-console.log(test.entries())
+// console.log('length: ' + test.length());
+// console.log(test.get('dog'));
+// console.log(test.remove('dog'));
+// console.log(test.remove('dog'));
+// console.log(test.has('dog'));
+// console.log(test.entries())
 
 console.log(test.get('sagitta'))
 console.log('Values: ' + test.values());
 
 console.log(test.keys());
+test.set('asd', 'bawa')
+test.set('asd1', 'bawa')
+test.set('asd2', '6df')
+test.set('dfg', 'xcv')
+test.set('cvbcvb', '324234')
+test.set('asd12', 'aww')
+test.set('asd132', '34f')
+test.set('asd1323', '67567')
+console.log(test.keys());
+console.log('Values: ' + test.values());
+console.log(test.length())
+console.log(test.entries())
 
 // console.log(test.buckets)
 
