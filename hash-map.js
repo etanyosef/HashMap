@@ -6,7 +6,6 @@ export class HashMap {
         this.capacity = capacity;
         this.threshold = this.capacity * this.loadFactor;
         this.buckets = new Array(capacity);
-        this.totalLoad = 0;
     }
 
     hash(key) {
@@ -22,8 +21,9 @@ export class HashMap {
 
     set(key, value) {
         // calculate load if it exceeds loadFactor, expand
-        if (this.threshold <= this.length()) {
-            console.log(this.length() + 'expand');
+        let length = this.length();
+        if (this.threshold < length) {
+            console.log(length + 'expand');
             this.expand();
         }
         
@@ -35,9 +35,6 @@ export class HashMap {
         } else {
             this.buckets[index].append(key, value);
         }
-            
-
-        this.totalLoad++;
     }
 
     get(key) {
@@ -137,13 +134,11 @@ export class HashMap {
         this.buckets = new Array(this.capacity);
 
         oldBuckets.forEach((bucket) => {
-            if (!bucket) return
-
             let current = bucket.head;
             while (current) {
                 this.set(current.key, current.value)
                 current = current.nextNode;
-            }           
+            }     
         });
 
     }
