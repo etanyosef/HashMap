@@ -133,12 +133,19 @@ export class HashMap {
     expand() {
         const oldBuckets = this.buckets;
         this.capacity *= 2;
+        this.threshold = this.capacity * this.loadFactor;
         this.buckets = new Array(this.capacity);
-        this.bucketLength = 0;
 
         oldBuckets.forEach((bucket) => {
-            this.set(bucket.key, bucket.value);
+            if (!bucket) return
+
+            let current = bucket.head;
+            while (current) {
+                this.set(current.key, current.value)
+                current = current.nextNode;
+            }           
         });
+
     }
 
 }
